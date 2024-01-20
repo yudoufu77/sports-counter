@@ -1,0 +1,106 @@
+$menuBg: #194f67; 
+
+#app {
+    .main-container {
+      min-height: 100%;
+      transition: margin-left .28s;
+      margin-left: 240px;
+      position: relative;
+    }
+   
+    .main-container.collapsed {
+      margin-left: 94px; /* 或者根据您的设计调整 */
+      /* 其他需要调整的样式 */
+    }
+    .sidebar-container {
+      width: 200px;
+      background-color: $menuBg;
+      height: 100%;
+      position: fixed;
+      font-size: 0px;
+      top: 70px;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: 8000; 
+   
+      .scrollbar-wrapper {
+        height: 100%;
+        overflow-x: hidden !important;
+   
+        .el-scrollbar__wrap {
+          overflow-x: hidden !important;
+        }
+   
+        a {
+          display: inline-block;
+          width: 100%;
+          overflow: hidden;
+          text-decoration: none;
+        }
+        .el-menu {
+          border: none;
+          height: 100%;
+          width: 100% !important;
+        }
+   
+        .svg-icon {
+          margin-right: 16px;
+        }
+   
+      }
+    }
+   
+    .sidebar-container.hideSidebar {
+      width: 54px;
+   
+      .main-container {
+        margin-left: 54px;
+      }
+   
+      .submenu-title-noDropdown {
+        padding: 0 !important;
+        position: relative;
+        
+        .el-tooltip {
+          padding: 0 !important;
+   
+          .svg-icon {
+            margin-left: 20px;
+          }
+        }
+      }
+   
+      .el-submenu {
+        overflow: hidden;
+   
+        &>.el-submenu__title {
+          padding: 0 !important;
+
+          .svg-icon {
+            margin-left: 20px;
+          }
+   
+          .el-submenu__icon-arrow {
+            display: none;
+          }
+        }
+      }
+   
+      .el-menu--collapse {
+        .el-submenu {
+          &>.el-submenu__title {
+            &>span {
+              height: 0;
+              width: 0;
+              overflow: hidden;
+              visibility: hidden;
+              display: none;
+            }
+          }
+        }
+      }
+    }
+   
+  }
+  
